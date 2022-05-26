@@ -43,3 +43,16 @@ variable "scale_down_cooldown" {
   description = "Period (in seconds) to wait between scale down events"
   default     = 300
 }
+
+variable "scale_up_name" {
+   type        = string
+  description = "The name of the ECS cluster where service is to be autoscaled"
+  default = ""
+}
+
+variable "scale_down_name" {
+   type        = string
+   description = "The name of the ECS cluster where service is to be autoscaled"
+   default = ""
+}
+  
