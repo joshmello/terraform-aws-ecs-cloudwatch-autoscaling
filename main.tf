@@ -42,7 +42,7 @@ resource "aws_appautoscaling_policy" "up" {
 
 resource "aws_appautoscaling_policy" "down" {
   count              = module.this.enabled ? 1 : 0
-  name               = var.scale_down_name != "" ? var.scale_up_name : module.scale_up_label.id 
+  name               = var.scale_down_name != "" ? var.scale_down_name : module.scale_down_label.id 
   service_namespace  = "ecs"
   resource_id        = "service/${var.cluster_name}/${var.service_name}"
   scalable_dimension = "ecs:service:DesiredCount"
